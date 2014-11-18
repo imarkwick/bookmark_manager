@@ -1,21 +1,20 @@
-require 'sinatra/base'
+require 'sinatra'
 require 'data_mapper'
+require './models/link'
+require './models/tag'
 
 	env = ENV["RACK_ENV"] || "development"
 	# this tells datamapper to use a postgres database on Localhost
 	# the name will be "bookmark_manager_test" or "bookmark_manager_development" depending on the environment
 	DataMapper.setup(:default, "postgres://localhost/bookmark_manager_#{env}")
 
-	require './lib/link' # needs to be done after datamapper is initialised
-
 	# after decaling the models, you should finalise them
 	DataMapper.finalize
 
 	# but to create them in the first place
 	DataMapper.auto_upgrade!
-
-class MyApp < Sinatra::Base
-	set :views, Proc.new { File.join(root, "..", "views") }
+	
+  set :views, Proc.new { File.join(root, "..", "views") }
 
   get '/' do
   	@links = Link.all
@@ -25,7 +24,8 @@ class MyApp < Sinatra::Base
   post '/links' do
   	url = params["url"]
   	title = params["title"]
-  	Link.create(:url => url, :title => title)
+    tags = params["tags"].split(" ").map{ |tag| Tag.first_or_create(:text => tag) }
+  	Link.create(:url => url, :title => title, :tags => tags)
   	redirect to('/')
   end
 
@@ -35,7 +35,3 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
-
-  # start the server if ruby file executed directly
-  run! if app_file == $0
-end
