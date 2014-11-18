@@ -4,23 +4,27 @@ feature "User browses the list of links" do
 
 
 	before(:each) {
-	Link.create(:url => "http://www.makersacademy.com",
-							:title => "Makers Academy",
+	Link.create(:url => "http://www.makersacademy.com", 
+							:title => "Makers Academy", 
 							:tags => [Tag.first_or_create(:text => 'education')])
 	Link.create(:url => "http://www.google.com",
-							:title => "Google"
-							:tags => [Tage.first_or_create(:text => 'search')])
+							:title => "Google",
+							:tags => [Tag.first_or_create(:text => 'search')])
 	Link.create(:url => "http://www.bing.com",
 							:title => "Bing",
-							:tags => [Tage.forst_or_create(:text => 'search')])
+							:tags => [Tag.first_or_create(:text => 'search')])
 	Link.create(:url => "http://www.code.org",
-							:title => "Code.ord",
-							:tags => [Tage.first_or_create(:text => 'education')])
-	}
+							:title => "Code.org",
+							:tags => [Tag.first_or_create(:text => 'education')])
+							}
+
+	scenario "when opening the home page" do
+		visit '/'
+		expect(page).to have_content("Makers Academy")
 	end
 
 	scenario "filtered by a tag" do
-		visit '/tage/search'
+		visit '/tags/search'
 		expect(page).not_to have_content("Makers Academy")
 		expect(page).not_to have_content("Code.org")
 		expect(page).to have_content("Google")
