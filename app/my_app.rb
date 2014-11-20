@@ -15,7 +15,7 @@ require_relative 'data_mapper_setup'
 enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash
-# set :partial_template_engine
+set :partial_template_engine, :erb
 
 require_relative 'controllers/users'
 require_relative 'controllers/sessions'
