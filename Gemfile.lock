@@ -110,6 +110,8 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-partial (0.4.0)
+      sinatra
     stringex (1.5.1)
     templater (1.0.0)
       diff-lcs (>= 1.1.2)
@@ -136,3 +138,4 @@ DEPENDENCIES
   rspec
   shotgun
   sinatra
+  sinatra-partial

@@ -24,7 +24,6 @@ feature "User adds a new link" do
 		within('#new-link') do
 			fill_in 'url', :with => url
 			fill_in 'title', :with => title
-			# to make the tags separated by a space
 			fill_in 'tags', :with => tags.join(' ')
 			click_button 'Add link'
 		end
