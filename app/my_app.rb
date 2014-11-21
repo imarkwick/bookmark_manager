@@ -6,8 +6,8 @@ require 'rack-flash'
 require_relative './models/link'
 require_relative './models/tag'
 require_relative './models/user'
-require_relative 'helpers/helper'
 require_relative 'data_mapper_setup'
+require_relative 'helpers/helper'
 
 
 # set :views, Proc.new { File.join(root, "..", "views") }
