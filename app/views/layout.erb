@@ -5,22 +5,20 @@
 
 	<title>Bookmark Manager</title>
 
+	<link rel="stylesheet" type="text/css" href="/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+
 </head>
 
 <body>
 
-<% if current_user %>
-	Welcome, <%= current_user.email %>
-	<form method="post" action="/sessions">
-		<input type="hidden" name="_method" value="delete">
-		<input type="submit" value="Sign out">
-	</form>
-<% end %>
-
+	<%= partial :header %>
 	<%= partial :flash %>
 
-<%= yield %>
+	<%= yield %>
 
 </body>
+
+</html>
 
 
