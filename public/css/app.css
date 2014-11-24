@@ -1,25 +1,41 @@
-body {
-	font-family: Helvetica, Arial, Sans-serif;
+* {
+	box-sizing: border-box;
 }
 
-a.button {
+body {
+	font-family: Helvetica, Arial, Sans-serif;
+	background-image: url(/images/extra_clean_paper.png);
+	color: #333;
+}
+
+a {
+	text-decoration: none;
+	color: #b77843;
+}
+
+.button {
 	display: inline-block;
-	width: 80px;
+	width: 110px;
+	cursor: pointer;
+	font-size: 14px;
 	background-color: #ff6633;
 	border: 2px solid white;
 	color: white;
-	text-decoration: none;
 	padding: 5px 10px;
 	text-align: center;
-	border-radius: 4px; /*rounded corners*/
-	margin-left: 10px;
-	margin-right: 10px;
-	text-shadow: 0 0 2px rgba(0,0,0, 0.4);
+	border-radius: 4px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: 0 0 2px rgba(0,0,0,0.4);
+}
+
+.button.highlighted {
+	background-color: #ff6633;
 }
 
 header {
 	height: 40px;
-	background-color: black;
+	background-color: #142636;
 	color: white;
 	display: flex;
 	padding: 0.20px;
@@ -34,8 +50,99 @@ header #logo {
 	padding: 10px;
 }
 
+header a {
+	color: white;
+	text-decoration: none;
+}
+
 header #user-links {
 	flex: 1;
 	-webkit-flex: 1;
 	text-align: right;
 }
+
+header #user-links > * {
+	display: inline-block;
+}
+
+header #user-links #welcome-message {
+	font-size: 12px;
+}
+
+#links-container {
+	background-color: #2e597e;
+	margin: 40px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	padding: 10px;
+}
+
+.link {
+	background-color: #d0e0ee;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+	margin: 10px inherit;
+	padding: 15px 10px
+}
+
+.link a.title {
+	letter-spacing: 1px;
+}
+
+.link .description {
+	margin: 10px inherit;
+}
+
+.link .source {
+	float: right;
+	font-size: 12px;
+}
+
+footer {
+	display: flex;
+	background-color: rgba(0,0,0,0.2);
+}
+
+footer > * {
+	margin: auto inherit;
+}
+
+footer img {
+	vertical-align: top;
+}
+
+footer #technologies {
+	-webkit-flex: 1;
+	flex: 1;
+}
+
+footer p {
+	padding: 5px 25px;
+}
+
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+}
+
+.footer .push {
+	height: 60px;
+}
+
+#notice {
+	text-align: center;
+	margin: 5px;
+	padding: 5px;
+	background-color: #c2d7e9;
+	border-radius: 4px;
+	box-shadow: 0 0 3px rgba(0,0,0,0.4);
+	color: white;
+}
+
+
+
+
