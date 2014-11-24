@@ -11,9 +11,10 @@
 				<input type="hidden" name="_method" value="delete">
 				<input type="submit" value="Sign out">
 			</form>
-
-			<% end %>
-
+		<% else %>
+			<a href='/users/new' id='sign-up' class='button'>Sign up</a>
+			<a href='/sessions/new' id='sign-in' class='button'>Sign in</a>
+		<% end %>
 
 	</div>
 </header>

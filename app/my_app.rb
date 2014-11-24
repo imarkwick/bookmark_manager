@@ -16,6 +16,7 @@ enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash
 set :partial_template_engine, :erb
+set :public, Proc.new {File.join(root, "..", "public") }
 
 require_relative 'controllers/users'
 require_relative 'controllers/sessions'
