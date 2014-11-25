@@ -1,8 +1,3 @@
-# require_relative 'tag'
-# require 'data_mapper'
-
-# This class corresponds to a table in the database
-# It can be used to manipulate the data
 
 class Link
 
