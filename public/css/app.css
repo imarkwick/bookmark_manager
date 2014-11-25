@@ -69,11 +69,12 @@ header #user-links #welcome-message {
 	font-size: 12px;
 }
 
-#links-container {
+#container {
 	background-color: #2e597e;
 	margin: 40px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.4);
 	padding: 10px;
+	border-radius: 3px;
 }
 
 .link {
@@ -94,6 +95,41 @@ header #user-links #welcome-message {
 .link .source {
 	float: right;
 	font-size: 12px;
+}
+
+.flash {
+	text-align: center;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 4px;
+	box-shadow: 0 0 3px rgba(0,0,0,0.4);
+	color: white;
+}
+
+.flash.notice {
+	background-color: rgba(67,183,120,0.75);
+}
+
+.flash.error {
+	background-color: rgba(169,29,42,0.75);
+}
+
+h1 {
+	font-size: 22px;
+}
+
+form {
+	text-align: left;
+}
+
+form p {
+	margin: 10px 0;
+}
+
+form input[type="text"], form input[type="password"] {
+	border: 1px solid black;
+	font-size: 16px;
+	width: 400px;
 }
 
 footer {
@@ -132,17 +168,5 @@ html, body {
 .footer .push {
 	height: 60px;
 }
-
-#notice {
-	text-align: center;
-	margin: 5px;
-	padding: 5px;
-	background-color: #c2d7e9;
-	border-radius: 4px;
-	box-shadow: 0 0 3px rgba(0,0,0,0.4);
-	color: white;
-}
-
-
 
 
