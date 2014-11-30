@@ -9,9 +9,6 @@ require_relative './models/user'
 require_relative 'data_mapper_setup'
 require_relative 'helpers/helper'
 
-
-# set :views, Proc.new { File.join(root, "..", "views") }
-
 enable :sessions
 set :session_secret, 'super secret'
 use Rack::Flash

@@ -1,10 +1,10 @@
-ENV["RACK_ENV"] = 'test' #so we know what database to work with
+ENV['RACK_ENV'] = 'test' #so we know what database to work with
 
 require './app/my_app'
 require 'database_cleaner'
 require 'capybara/rspec'
-# require 'data_mapper'
-# require 'sinatra'
+require 'sinatra'
+
 
 # Capybara.app = BookmarkManager.new
 Capybara.app = Sinatra::Application
@@ -28,11 +28,11 @@ Capybara.app = Sinatra::Application
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
 
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-  config.run_all_when_everything_filtered = true
-  config.filter_run :focus
+  # config.treat_symbols_as_metadata_keys_with_true_values = true
+  # config.run_all_when_everything_filtered = true
+  # config.filter_run :focus
 
-  config.order = 'random'
+  # config.order = 'random'
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
