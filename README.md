@@ -1,10 +1,11 @@
-#Bookmark Manager
+# Bookmark Manager
 
-This week's challenge at Makers Academy was to build a bookmark manager, similar to pineapple.io or delicious.com. 
+This week's challenge at Makers Academy was to build a bookmark manager.
+A bookmark manager is a website to maintain a collection of links, organised by tags. You can use it to save webpages you find useful and browse links other users have added.
 
-The aim of the project was to learn about database web apps in Ruby using Sinatra. Also to provide an example of how relational databases work as well as get an introduction to css and front end design. 
+## Objectives:
 
-A bookmark manager is a website to maintain a collection of links, organised by tags. You can use it to save a webpage you found useful. You can add tags to the webpages you saved to find them later. You can browse links other users have added.
+Learn about database web apps in Ruby using Sinatra and an introduction to front end design using CSS. 
 
 The website will have the following options:
 
@@ -13,14 +14,31 @@ The website will have the following options:
 * Add tags to the links
 * Filter links by a tag
 
-To view tests run rspec;
+## Technologies used:
+
+* Ruby
+* Sinatra
+* HTML5
+* CSS
+* RSpec
+* Capybara
+* Cucumber
+* DataMapper
+* Postgres
+
+## How to run tests:
 
 ```sh
+$ git clone https://github.com/imarkwick/bookmark_manager.git
+$ cd bookmark_manager
 $ rspec
 ```
 
-To view in the browser, use rackup and visit localhost/9292;
+## How to run the server:
 
 ```sh
+$ git clone https://github.com/imarkwick/bookmark_manager.git
+$ cd bookmark_manager
+$ bundle install
 $ rackup
 ```
